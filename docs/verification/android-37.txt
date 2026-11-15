@@ -1,6 +1,6 @@
 com.yusd.circleicons.IconRenderingTest:......
 com.yusd.circleicons.PlatformInspectionTest:...
 
-Time: 0.711
+Time: 1.184
 
 OK (9 tests)
