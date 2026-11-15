@@ -1,6 +1,5 @@
 """Run the real-Android rendering and interface checks on one explicitly selected device."""
 import argparse
-import os
 from pathlib import Path
 import re
 import subprocess
@@ -31,7 +30,7 @@ if api >= 28:
     command.append('--no-hidden-api-checks')
 command.extend(['-w', 'com.yusd.circleicons.inspection.test/androidx.test.runner.AndroidJUnitRunner'])
 result = adb(*command)
-(output / f'inspection-api{api}.txt').write_text(result, encoding='utf-8')
+(output / f'inspection-api{api}.txt').write_text(result.strip() + '\n', encoding='utf-8')
 print(result)
 # `am instrument` may exit zero even when JUnit fails; only the test runner's success counts.
 if not re.search(r'OK \(\d+ tests?\)', result) or 'FAILURES!!!' in result:

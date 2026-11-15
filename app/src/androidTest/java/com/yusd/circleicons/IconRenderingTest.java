@@ -64,6 +64,10 @@ public final class IconRenderingTest {
             assertEquals(Color.alpha(expectedMask.getPixel(x,y)), Color.alpha(actual.getPixel(x,y)));
         }
         assertEquals(Color.WHITE, actual.getPixel(48,48));
+        AdaptiveIconDrawable translucent = (AdaptiveIconDrawable) CircleNormalizer.adapt(
+                plate(Color.argb(242, 210, 40, 40), Color.WHITE, 128, 128));
+        int background = render(translucent.getBackground()).getPixel(48,48);
+        assertTrue("A nearly opaque colored plate must not acquire a black background", Color.red(background) > 200);
     }
     @Test public void notificationGlyphRetainsAlphaUnderBothSystemTints() throws IOException {
         for (int[] colors : new int[][]{{Color.RED, Color.WHITE}, {Color.WHITE, Color.BLACK}, {Color.BLACK, Color.WHITE}}) {
