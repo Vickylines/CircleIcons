@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CircleIcons</string>
+    <string name="module_description">Adaptive app icons and readable monochrome notification icons for AOSP-based systems</string>
+</resources>

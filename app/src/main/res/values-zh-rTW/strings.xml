@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">圓形圖示適配</string>
+    <string name="module_description">適配原生系統的應用程式圖示，修復狀態列通知圖示的實色方塊</string>
+</resources>

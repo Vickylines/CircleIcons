@@ -1,0 +1,31 @@
+name: Compatibility / 图标适配
+description: Report a ROM, launcher or notification rendering problem
+title: '[Compatibility] '
+labels: []
+body:
+  - type: input
+    id: system
+    attributes:
+      label: Android / ROM / device
+      placeholder: Android 15, AOSP build, device model
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Module / framework / launcher versions
+      placeholder: CircleIcons version, framework version, launcher package and version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Location and reproduction steps
+      description: Identify the affected app and screen; include expected and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots and CircleIcons log lines
+      description: Remove notification content, accounts, device identifiers and network addresses before posting.

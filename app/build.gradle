@@ -1,0 +1,54 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.yusd.circleicons'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'com.yusd.circleicons'
+        minSdk 27
+        targetSdk 36
+        versionCode 9
+        versionName '3.0.0-beta.1'
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+    }
+
+    signingConfigs {
+        if (System.getenv('CIRCLE_KEYSTORE')) {
+            release {
+                storeFile file(System.getenv('CIRCLE_KEYSTORE'))
+                storePassword System.getenv('CIRCLE_STORE_PASSWORD')
+                keyAlias System.getenv('CIRCLE_KEY_ALIAS')
+                keyPassword System.getenv('CIRCLE_KEY_PASSWORD')
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            if (System.getenv('CIRCLE_KEYSTORE')) signingConfig signingConfigs.release
+        }
+    }
+    flavorDimensions += 'purpose'
+    productFlavors {
+        phone { dimension 'purpose' }
+        inspection {
+            dimension 'purpose'
+            applicationIdSuffix '.inspection'
+        }
+    }
+    buildFeatures { buildConfig true }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lint { abortOnError true }
+}
+
+dependencies {
+    compileOnly 'de.robv.android.xposed:api:82'
+    androidTestImplementation 'androidx.test:runner:1.6.2'
+    androidTestImplementation 'junit:junit:4.13.2'
+}

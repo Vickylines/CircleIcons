@@ -1,0 +1,18 @@
+<resources>
+    <string-array name="xposed_scope">
+        <item>com.android.launcher3</item>
+        <item>com.google.android.apps.nexuslauncher</item>
+        <item>com.android.systemui</item>
+        <item>com.android.settings</item>
+        <item>com.android.settings.intelligence</item>
+        <item>com.google.android.settings.intelligence</item>
+        <item>com.android.permissioncontroller</item>
+        <item>com.google.android.permissioncontroller</item>
+        <item>com.android.intentresolver</item>
+        <item>com.android.packageinstaller</item>
+        <item>com.google.android.packageinstaller</item>
+        <item>com.android.documentsui</item>
+        <item>com.google.android.documentsui</item>
+        <item>org.lineageos.lineageparts</item>
+    </string-array>
+</resources>

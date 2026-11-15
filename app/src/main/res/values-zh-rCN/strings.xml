@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">圆形图标适配</string>
+    <string name="module_description">适配原生系统的应用图标，修复状态栏通知图标的实色方块</string>
+</resources>
